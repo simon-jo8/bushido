@@ -1,24 +1,62 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+gsap.registerPlugin(ScrollTrigger);
 
-setupCounter(document.querySelector('#counter'))
+var tlKatana1 = gsap.timeline();
+tlKatana1.from(".katana1", {y: -900, duration: 1});
+tlKatana1.from(".katana1", {rotation:-360, transformOrigin:"center center", duration:1},"<");
+
+var tlKatana2 = gsap.timeline();
+tlKatana2.from(".katana2", {y: -900, duration: 1});
+tlKatana2.from(".katana2", {rotation:-360, transformOrigin:"center center", duration:1},"<");
+
+
+
+gsap.from('#first',
+    {
+
+    })
+
+gsap.to('#first',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: -50,
+    }
+)
+gsap.to('#title',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: -100,
+    }
+)
+gsap.to('#sun',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: 300,
+    }
+)
+gsap.to('#second',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: -200,
+    }
+)
+
+gsap.to('#third',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: -300,
+    }
+)
