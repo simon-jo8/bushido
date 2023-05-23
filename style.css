@@ -9,6 +9,25 @@
   src: url("../assets/font/Merosa_Bold.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Inter;
+  font-weight: black;
+  src: url("../assets/font/Inter-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: ExtraLight;
+  src: url("../assets/font/Inter-ExtraLight.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: Regular;
+  src: url("../assets/font/times-new-roman.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -84,4 +103,105 @@ h1{
 
 .title_section{
   height: 100vh;
+}
+
+/* Jonathan */
+
+.influence{
+  padding-top: 500px;
+  padding-left: 100px;
+  padding-bottom: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+h3{
+  font-family: Inter;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 60px;
+  color: #DF1A10;
+}
+
+.influence h3{
+  margin-right: 400px;
+}
+
+.bloc1 {
+  display: flex;
+  flex-direction:row;
+}
+
+p{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight:500;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.influence_text{
+  padding-right: 200px;
+}
+
+.img1{
+  right: 0;
+  opacity: 0;
+}
+
+.img2{
+  position: absolute;
+  left: 60%;
+  padding-top: 200px;
+  opacity: 0;
+}
+
+.jp{
+  position: absolute;
+  left: 80%;
+  padding-top: 100px;
+  z-index: 1;
+  right: 0;
+  opacity: 0;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  color: #DF1A10;
+  font-size: 125px;
+  font-family: Inter;
+  font-weight:bold;
+}
+
+@keyframes slidefromright {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slidefrombottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.img1.slidefromright {
+  animation: slidefromright 2s ease-in-out forwards;
+}
+
+.img2.slidefrombottom {
+  animation: slidefrombottom 2s ease-in-out forwards;
+}
+
+.jp.slidefromright {
+  animation: slidefromright 2s ease-in-out forwards;
 }
