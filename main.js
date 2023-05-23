@@ -60,3 +60,24 @@ gsap.to('#third',
         y: -300,
     }
 )
+
+/* First part : Jap Title */
+
+const tl = gsap.timeline();
+
+tl.from(".line span", 1.8, {
+  y: 100,
+  ease: "power4.out",
+  delay: 1,
+  skewY: 7,
+  stagger: {
+    amount: 0.3
+  }
+})
+
+// gsap.to(".japanaseSun", {
+//     duration: 10,
+//     xPercent: -100,
+//     yPercent: -100,
+//     ease: "power1.inOut",
+// });
