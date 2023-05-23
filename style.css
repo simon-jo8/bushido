@@ -109,7 +109,7 @@ h1{
 
 .influence{
   padding-top: 500px;
-  padding-left: 100px;
+  margin-left: 150px;
   padding-bottom: 500px;
   position: relative;
   overflow: hidden;
@@ -144,7 +144,8 @@ p{
 }
 
 .img1{
-  right: 0;
+  max-width: 100%;
+  height: auto;
   opacity: 0;
 }
 

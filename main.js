@@ -61,37 +61,33 @@ gsap.to('#third',
     }
 )
 
-  // Get the elements
-  const influenceSection = document.querySelector('#influence-section');
-  const img1 = document.querySelector('.img1');
-  const img2 = document.querySelector('.img2');
-  const jp = document.querySelector('.jp');
+// Bloc Influence Jonathan
+const influenceSection = document.querySelector('#influence-section');
+const img1 = document.querySelector('.img1');
+const img2 = document.querySelector('.img2');
+const jp = document.querySelector('.jp');
 
-  // Options for the Intersection Observer
-  const options = {
-    root: null, // Use the viewport as the root
-    threshold: 0.5, // Trigger the callback when 50% of the element is visible
-  };
+const options = {
+  root: null,
+  threshold: 0.5,
+};
 
-  // Callback function when the section is intersecting
-  const callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Add animation classes when the section is in the viewport
-        img1.classList.add('slidefromright');
-        img2.classList.add('slidefrombottom');
-        jp.classList.add('slidefromright');
-      } else {
-        // Remove animation classes when the section is out of the viewport
-        img1.classList.remove('slidefromright');
-        img2.classList.remove('slidefrombottom');
-        jp.classList.remove('slidefromright');
-      }
-    });
-  };
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      img1.classList.add('slidefromright');
+      img2.classList.add('slidefrombottom');
+      jp.classList.add('slidefromright');
 
-  // Create the Intersection Observer
-  const observer = new IntersectionObserver(callback, options);
+      observer.unobserve(entry.target);
+    } else {
+      img1.classList.remove('slidefromright');
+      img2.classList.remove('slidefrombottom');
+      jp.classList.remove('slidefromright');
+    }
+  });
+};
 
-  // Start observing the influence section
-  observer.observe(influenceSection);
+const observer = new IntersectionObserver(callback, options);
+
+observer.observe(influenceSection);
