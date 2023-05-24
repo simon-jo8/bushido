@@ -3,6 +3,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+document.addEventListener("DOMContentLoaded", function() {
+    var images = document.getElementsByClassName('case');
+
+    for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener('click', function() {
+            this.classList.toggle('clicked');
+        });
+    }
+});
+
+
 gsap.from('.case-1', { 
     y: '-200',
     opacity: 0,
