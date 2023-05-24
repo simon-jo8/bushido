@@ -185,7 +185,7 @@ h1.cut .char::after{
   width: 35%;
 }
 
-.layer1,{
+.layer1{
   overflow: hidden;
 }
 .layer1,.layer2,.layer3{
@@ -465,6 +465,7 @@ h1{
 
 .first_part {
   height: 200vh;
+  position: relative;
 }
 
 .first_part .jap_main_title_container {
@@ -564,4 +565,24 @@ h1{
 
 .first_part .first_part_content .content_bloc .first_part_content_three p {
   font-size: 1.5rem;
+}
+
+.sunrise_container {
+  background-color: white;
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin-top: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.sunrise_container img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: -156px;
 }
