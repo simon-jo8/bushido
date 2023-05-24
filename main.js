@@ -88,6 +88,8 @@ function launch(){
             )
         }
     });
+
+
     var animation = lottie.loadAnimation({
         container: document.querySelector('.porte'),
         renderer: 'svg',
@@ -222,6 +224,8 @@ window.addEventListener('scroll', () => {
 });
 
 //Jacky
+
+
 const tl = gsap.timeline();
 
 tl.from(".line span", 1.8, {
