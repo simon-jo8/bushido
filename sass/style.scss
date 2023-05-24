@@ -48,9 +48,31 @@ p {
   font-size: 22px;
   line-height: 1.5;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background: #F8CE9C;
+}
+.hidden{
+  display: none!important;
+}
+
+#loading{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:#F8CE9C;
+  z-index: 9999999999;
+  opacity: 1;
+  pointer-events: none;
+}
+
 
 #flash{
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background: white;
