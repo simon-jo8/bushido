@@ -249,20 +249,16 @@ h1.cut .char::after{
 
 //JONATHAN
 .influence{
-  padding-top: 500px;
+  padding-top: 350px;
   padding-bottom: 200px;
   margin-left: 150px;
   position: relative;
   overflow: hidden;
 }
 
-.influence h3{
-  margin-right: 400px;
-  font-family: Inter;
-  font-weight: lighter;
+.influence_title{
   text-transform: uppercase;
-  font-size: 60px;
-  color: #DF1A10;
+  margin-right: 400px;
 }
 
 .bloc_horizontal {
@@ -334,15 +330,15 @@ h1.cut .char::after{
 }
 
 .horizontal_img.slidefromright {
-  animation: slidefromright 2.5s ease-in-out forwards;
+  animation: slidefromright 2s ease-in-out forwards;
 }
 
 .vertical_img.slidefrombottom {
-  animation: slidefrombottom 2.5s  ease-in-out forwards;
+  animation: slidefrombottom 2s  ease-in-out forwards;
 }
 
 .jp_text.slidefromright {
-  animation: slidefromright 2.5s  ease-in-out forwards;
+  animation: slidefromright 2s  ease-in-out forwards;
 }
 
 /* BTN */
@@ -379,7 +375,11 @@ h1.cut .char::after{
 
 /* Katana */
 .katana_scroll{
-  margin: 200px 0 500px 0;
+  margin: 250px 0 250px 0;
+}
+
+.katana_slice {
+  overflow-x: hidden; /* Masquer le contenu qui dépasse horizontalement */
 }
 
 /* Fin Jonathan */
