@@ -1,3 +1,11 @@
+@import 'manga.scss';
+
+$red-color: #DF1A10;
+$background-color: #F8CE9C;
+
+$h2-size: 64px;
+$text-size: 22px;
+
 @font-face {
   font-family: Merosa;
   src: url("../assets/font/Merosa.otf") format("opentype");
@@ -9,6 +17,8 @@
   src: url("../assets/font/Merosa_Bold.otf") format("opentype");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -19,12 +29,26 @@ h1{
     font-family: Merosa;
     font-size: 12rem;
     font-weight: bold;
-    color: #DF1A10;
+    color: $red-color;
     margin: 0;
     pointer-events: auto;
      z-index: 99999999;
 
 }
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: $h2-size;
+  color: $red-color;
+  display: inline;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
 #flash{
   position: absolute;
   height: 100vh;

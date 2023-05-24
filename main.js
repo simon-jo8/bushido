@@ -1,4 +1,5 @@
-import './style.css'
+import './sass/style.scss';
+import './manga.js';
 import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import lottie from 'lottie-web';
@@ -21,8 +22,6 @@ document.querySelector('#titleCut').addEventListener('click', function() {
         document.querySelector('#titleCut').classList.remove('cut');
     },3800)
 })
-
-
 
 
 var tlLoading = gsap.timeline({
