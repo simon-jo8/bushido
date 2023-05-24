@@ -329,3 +329,16 @@ for(let i = 0; i < shapes.length; i++){
         }
     )
 }
+
+const tween = gsap.to("#sunrise", {
+    scrollTrigger: {
+        trigger: ".sunrise_container",
+        scrub: true,
+        start: "top bottom",
+        end: "bottom top",
+    },
+    rotation: 90,
+    ease: "none",
+});
+
+  
