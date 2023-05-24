@@ -101,8 +101,9 @@ body {
 }
 
 h1:hover{
-    cursor: pointer;
+  cursor: url('../assets/katanaCursor.svg'),auto;
 }
+
 h1.splitting .char {
   visibility: hidden;
   position: relative;
@@ -184,6 +185,9 @@ h1.cut .char::after{
   width: 35%;
 }
 
+.layer1,{
+overflow: hidden;
+}
 .layer1,.layer2,.layer3{
   bottom: 0;
   height: 100vh;

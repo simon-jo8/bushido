@@ -21,6 +21,24 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 border: 4px solid #DF1A10;
+              &:before{
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background : #DF1A10;
+                mix-blend-mode: overlay;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+              }
+              &:hover{
+                cursor: url('../assets/katanaCursor.svg'),auto;
+              }
+              &.clicked{
+                &:before{
+                  opacity: 1;
+                }
+              }
             }
             .case-1 { 
                 grid-area: 1 / 2 / 2 / 5; 

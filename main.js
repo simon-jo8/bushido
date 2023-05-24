@@ -10,6 +10,7 @@ Splitting();
 
 
 
+
 function launch(){
     var tlLoading = gsap.timeline({
         onComplete: function() {
@@ -151,7 +152,7 @@ window.addEventListener("load", (event) => {
 });
 
 document.querySelector('#titleCut').addEventListener('click', function() {
-    var audio = new Audio('./assets/sound/katana.aac');
+    var audio = new Audio('/katana.aac');
     audio.play();
     setTimeout(function(){
         document.querySelector('#titleCut').classList.add('cut');
