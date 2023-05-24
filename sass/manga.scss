@@ -1,5 +1,5 @@
 .manga {
-    width: 1200px;
+    width: 1600px;
     margin: 0 auto 320px auto;
     header {
         margin-bottom: 40px;
@@ -7,6 +7,9 @@
     &__main {
         display: flex;
         justify-content: space-between;
+        .vertical_text {
+            margin: 0 20px;
+        }
     }
     &__grid {
             display: grid;
