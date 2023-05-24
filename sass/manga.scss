@@ -1,8 +1,8 @@
 .manga {
-    width: 1280px;
+    width: 1200px;
     margin: 0 auto 320px auto;
     header {
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
     &__main {
         display: flex;
@@ -11,7 +11,7 @@
     &__grid {
             display: grid;
             grid-template-columns: 1fr 264px 188px 1fr;
-            grid-template-rows: 180px 120px 80px 200px 180px;
+            grid-template-rows: 180px 120px 80px 160px 160px;
             grid-column-gap: 16px;
             grid-row-gap: 16px;
             .case {

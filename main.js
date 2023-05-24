@@ -1,4 +1,5 @@
-import './sass/style.scss'
+import './sass/style.scss';
+import './manga.js';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,8 +12,6 @@ tlKatana1.from(".katana1", {rotation:-360, transformOrigin:"center center", dura
 var tlKatana2 = gsap.timeline();
 tlKatana2.from(".katana2", {y: -900, duration: 1});
 tlKatana2.from(".katana2", {rotation:-360, transformOrigin:"center center", duration:1},"<");
-
-
 
 gsap.from('#first',
     {

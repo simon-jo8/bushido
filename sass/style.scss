@@ -3,7 +3,7 @@
 $red-color: #DF1A10;
 $background-color: #F8CE9C;
 
-$h2-size: 80px;
+$h2-size: 64px;
 $text-size: 22px;
 
 @font-face {
@@ -37,6 +37,7 @@ h2 {
   font-weight: 200;
   font-size: $h2-size;
   color: $red-color;
+  display: inline;
 }
 .title-manga {
   color: none;
