@@ -112,7 +112,7 @@ h1{
   height: 100vh;
 }
 
-/* First Part : Jap Title */
+/* First Part */
 
 .first_part {
   height: 200vh;
@@ -160,12 +160,13 @@ h1{
   height: 100%;
   text-align: center;
   overflow: hidden;
-  z-index: 99999;
+  z-index: 1;
 }
 
 .first_part .first_part_content .line_container svg {
   display: inline-block;
   height: 100%;
+  position: relative;
 }
 
 .first_part .first_part_content .content_bloc {
@@ -197,95 +198,21 @@ h1{
 }
 
 .first_part .first_part_content .content_bloc .first_part_content_two {
+  position: relative;
   margin: 0 20% 0 60%;
-  height: 10vh;
+  height: 35vh;
 }
 
 .first_part .first_part_content .content_bloc .first_part_content_two p {
   font-size: 1.5rem;
 }
 
-/* Japanese Sunrise */
-
-/* #turningSun {
-  width: 200px;
-  height: 200px;
-  background-color: #FF0000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.first_part .first_part_content .content_bloc .first_part_content_three {
+  position: relative;
+  margin: 0 55% 0 10%;
+  height: 28vh;
 }
 
-#turningSun:before,
-#turningSun .ray {
-  content: "";
-  position: absolute;
-  background-color: #FF0000;
+.first_part .first_part_content .content_bloc .first_part_content_three p {
+  font-size: 1.5rem;
 }
-
-#turningSun:before {
-  width: 100px;
-  height: 20px;
-  transform-origin: center center;
-  animation: rotate-rays 3s linear infinite;
-}
-
-#turningSun .ray {
-  width: 10px;
-  height: 60px;
-  transform-origin: bottom center;
-  animation: rotate-rays 3s linear infinite reverse;
-}
-
-@keyframes rotate-rays {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-#turningSun:before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#turningSun .ray:nth-child(2) {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-#turningSun .ray:nth-child(3) {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-
-#turningSun .ray:nth-child(4) {
-  transform: translate(-50%, -50%) rotate(180deg);
-}
-
-#turningSun .ray:nth-child(5) {
-  transform: translate(-50%, -50%) rotate(225deg);
-}
-
-#turningSun .ray:nth-child(6) {
-  transform: translate(-50%, -50%) rotate(270deg);
-}
-
-#turningSun .ray:before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -5px;
-  width: 20px;
-  height: 60px;
-  background-color: #FF0000;
-  transform-origin: bottom center;
-}
-
-#turningSun .ray:nth-child(2):before,
-#turningSun .ray:nth-child(3):before,
-#turningSun .ray:nth-child(4):before,
-#turningSun .ray:nth-child(5):before,
-#turningSun .ray:nth-child(6):before {
-  transform: rotate(90deg);
-} */

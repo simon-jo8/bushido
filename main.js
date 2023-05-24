@@ -13,7 +13,6 @@ tlKatana2.from(".katana2", {y: -900, duration: 1});
 tlKatana2.from(".katana2", {rotation:-360, transformOrigin:"center center", duration:1},"<");
 
 
-
 gsap.from('#first',
     {
 
@@ -61,7 +60,7 @@ gsap.to('#third',
     }
 )
 
-// First part : Jap Title
+// First part : Jap Title effect
 
 const tl = gsap.timeline();
 
@@ -75,36 +74,15 @@ tl.from(".line span", 1.8, {
   }
 })
 
+// First part : Line effect
+
 let path = document.querySelector('path');
 let pathLength = path.getTotalLength();
 
 path.style.strokeDasharray = pathLength + ' ' + pathLength;
-
 path.style.strokeDashoffset = pathLength;
 
-// Animate first part title
-
-gsap.to('.text_parallax',
-    {
-        scrollTrigger: {
-            scrub: true,
-        },
-        y: -100,
-    }
-)
-
-
-// gsap.to('.text_parallax span',
-//     {
-//         scrollTrigger: {
-//             scrub: true,
-//         },
-//         y: -200,
-//     }
-// )
-
 window.addEventListener('scroll', () => {
-
     // What % down is it ?
     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
@@ -115,20 +93,63 @@ window.addEventListener('scroll', () => {
     path.style.strokeDashoffset = pathLength - drawLength;
 })
 
-const paths = document.querySelectorAll('#svg_first_part .shape');
-console.log(paths);
+// First part : Contents scrollTrigger
 
-for(let i = 0; i < 3; i++){
-    gsap.fromTo(paths[i],{
-        x: -100, opacity: 0,
+gsap.fromTo('.first_part_content_one h2',{
+    x: 0, opacity: 0
+}, {
+    scrollTrigger: {
+        trigger: '.first_part_content_one h2',
+        scrub: 1,
+        start: "top 50%",
+        duration: 20
+    },
+    x: 100, opacity: 100
+    },
+)
+
+gsap.fromTo('.first_part_content_one span',{
+    x: 100, opacity: 0
+}, {
+    scrollTrigger: {
+        trigger: '.first_part_content_one span',
+        scrub: 1,
+        start: "top 70%",
+        duration: 20
+    },
+    x: 0, opacity: 100
+    },
+)
+
+const texts = document.querySelectorAll('.content_bloc section p');
+
+for(let i = 0; i < texts.length; i++){
+    gsap.fromTo(texts[i],{
+        y: 50, opacity: 0
     }, {
         scrollTrigger: {
-            trigger: paths[i],
-            markers: true,
+            trigger: texts[i],
+            scrub: 1,
+            start: "top 70%",
+        },
+        y: 0, opacity: 100
+    },
+    )
+}
+
+const shapes = document.querySelectorAll('#svg_first_part .shape');
+
+for(let i = 0; i < shapes.length; i++){
+    gsap.fromTo(shapes[i],{
+        x: -100, opacity: 0
+    }, {
+        scrollTrigger: {
+            trigger: shapes[i],
             scrub: 1,
             start: "top 50%",
-            end: "bottom bottom"
+            end: "bottom 50%"
         },
         x: 0, opacity: 100
-    })
+    }
+    )
 }
