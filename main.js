@@ -61,7 +61,7 @@ gsap.to('#third',
     }
 )
 
-/* First part : Jap Title */
+// First part : Jap Title
 
 const tl = gsap.timeline();
 
@@ -75,9 +75,60 @@ tl.from(".line span", 1.8, {
   }
 })
 
-// gsap.to(".japanaseSun", {
-//     duration: 10,
-//     xPercent: -100,
-//     yPercent: -100,
-//     ease: "power1.inOut",
-// });
+let path = document.querySelector('path');
+let pathLength = path.getTotalLength();
+
+path.style.strokeDasharray = pathLength + ' ' + pathLength;
+
+path.style.strokeDashoffset = pathLength;
+
+// Animate first part title
+
+gsap.to('.text_parallax',
+    {
+        scrollTrigger: {
+            scrub: true,
+        },
+        y: -100,
+    }
+)
+
+
+// gsap.to('.text_parallax span',
+//     {
+//         scrollTrigger: {
+//             scrub: true,
+//         },
+//         y: -200,
+//     }
+// )
+
+window.addEventListener('scroll', () => {
+
+    // What % down is it ?
+    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+    // Length to offset the dashes
+    var drawLength = pathLength * scrollPercentage;
+
+    // Draw in reverse
+    path.style.strokeDashoffset = pathLength - drawLength;
+})
+
+const paths = document.querySelectorAll('#svg_first_part .shape');
+console.log(paths);
+
+for(let i = 0; i < 3; i++){
+    gsap.fromTo(paths[i],{
+        x: -100, opacity: 0,
+    }, {
+        scrollTrigger: {
+            trigger: paths[i],
+            markers: true,
+            scrub: 1,
+            start: "top 50%",
+            end: "bottom bottom"
+        },
+        x: 0, opacity: 100
+    })
+}
