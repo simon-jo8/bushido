@@ -570,8 +570,8 @@ h1{
 .sunrise_container {
   background-color: white;
   position: relative;
-  width: 800px;
-  height: 400px;
+  width: 1000px;
+  height: 600px;
   margin-top: 20em;
   display: flex;
   justify-content: center;
@@ -581,8 +581,8 @@ h1{
 
 .sunrise_container img {
   flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 200%;
+  min-height: 200%;
   position: absolute;
-  top: -156px;
+  top: -350px;
 }

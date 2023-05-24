@@ -328,5 +328,3 @@ const tween = gsap.to("#sunrise", {
     rotation: 90,
     ease: "none",
 });
-
-  
