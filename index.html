@@ -4,21 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Bushido</title>
   </head>
   <body>
+  <div id="flash"></div>
     <section class="parallax">
       <img src="assets/parallax/sun.svg" alt="" class="sun" id="sun">
-      <h1 class="title-parallax" id="title">Bushido</h1>
+      <div class="title-parallax">
+<!--        <img src="assets/parallax/bushido.svg"  id="title">-->
+        <h1 data-splitting id="titleCut">Bushido</h1>
+        <img src="assets/parallax/bushidoJapan.svg" id="titleJapan">
+      </div>
       <div class="layer1" id="first">
         <img src="assets/parallax/pagode.svg" alt="" class="pagode">
-        <img src="assets/parallax/porte.svg" alt="" class="porte">
+          <div class="porte" style="width: 200px"></div>
+<!--          <lottie-player-->
+<!--                  direction="1"-->
+<!--                  class="porte"-->
+<!--                  mode="normal"-->
+<!--                  src="https://lottie.host/9c8585cd-8c24-4747-a49f-1c3b6dd7181b/APMvAro7yB.json"-->
+<!--                  style="width: 200px"-->
+<!--          >-->
+<!--          </lottie-player>-->
+
         <img src="assets/parallax/katana1.svg" alt="" class="katana1">
         <img src="assets/parallax/katana2.svg" alt="" class="katana2">
         <img src="assets/parallax/layer1.svg" alt="" class="ground1">
       </div>
-      <img src="assets/parallax/layer2.svg" alt="" class="layer layer2" id="second">
-      <img src="assets/parallax/layer3.svg" alt="" class="layer layer3" id="third">
+      <div class="layer2" id="second">
+        <img src="assets/parallax/grass1.svg" alt="" class="grass1">
+        <img src="assets/parallax/grass2.svg" alt="" class="grass2">
+        <img src="assets/parallax/layer2.svg" alt="" class="layer ground2">
+      </div>
+      <div class="layer3" id="third">
+        <img src="assets/parallax/layer3.svg" alt="" class="layer ground3">
+      </div>
     </section>
     <section class="title_section">
     </section>
