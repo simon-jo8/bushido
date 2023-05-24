@@ -26,13 +26,13 @@ body {
 }
 
 h1{
-    font-family: Merosa;
-    font-size: 12rem;
-    font-weight: bold;
-    color: $red-color;
-    margin: 0;
-    pointer-events: auto;
-     z-index: 99999999;
+  font-family: Merosa;
+  font-size: 12rem;
+  font-weight: bold;
+  color: $red-color;
+  margin: 0;
+  pointer-events: auto;
+  z-index: 99999999;
 
 }
 h2 {
@@ -186,7 +186,7 @@ h1.cut .char::after{
 }
 
 .layer1,{
-overflow: hidden;
+  overflow: hidden;
 }
 .layer1,.layer2,.layer3{
   bottom: 0;
@@ -196,7 +196,7 @@ overflow: hidden;
 }
 
 .layer2,.layer3{
- pointer-events: none;
+  pointer-events: none;
 }
 
 .layer1 .pagode{
@@ -408,3 +408,160 @@ overflow: hidden;
 }
 
 /* Fin Jonathan */
+
+//Jacky
+
+@font-face {
+  font-family: Merosa;
+  src: url("../assets/font/Merosa.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Merosa;
+  font-weight: bold;
+  src: url("../assets/font/Merosa_Bold.otf") format("opentype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #F8CE9C;
+  overflow-x: hidden;
+}
+
+/* Repère blocs div */
+.bg_blue {
+  background-color: rgb(156, 156, 255);
+}
+
+.bg_red {
+  background-color: rgb(255, 184, 156);
+}
+
+.bg_green {
+  background-color: rgb(159, 255, 156);
+}
+
+.bg_yellow {
+  background-color: rgb(255, 253, 156);
+}
+/* ^ A Enlever ^ */
+
+h1{
+  font-family: Merosa;
+  font-size: 12rem;
+  font-weight: bold;
+  color: #DF1A10;
+  margin: 0;
+}
+
+.jap_vertical_title {
+  writing-mode: vertical-rl;
+}
+
+
+
+/* First Part */
+
+.first_part {
+  height: 200vh;
+}
+
+.first_part .jap_main_title_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  height: 40%;
+}
+
+.first_part .jap_main_title_container .line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.first_part .jap_main_title_container .line span {
+  position: absolute;
+  line-height: 5rem;
+  font-size: 4rem;
+  font-weight: 900;
+  -webkit-text-stroke: 2px #DF1A10;
+  color: transparent;
+}
+
+.first_part .first_part_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.first_part .first_part_content .line_container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.first_part .first_part_content .line_container svg {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.first_part .first_part_content .content_bloc {
+  position: absolute;
+  width: 100vw;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_one {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  height: 64vh;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_one h2 {
+  font-family: Merosa;
+  font-weight: lighter;
+  font-size: 6rem;
+  color: #DF1A10;
+  width: 70%;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_one span {
+  align-self: flex-end;
+  font-size: 1.875rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+  margin-top: -50px;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_two {
+  position: relative;
+  margin: 0 20% 0 60%;
+  height: 35vh;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_two p {
+  font-size: 1.5rem;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_three {
+  position: relative;
+  margin: 0 55% 0 10%;
+  height: 28vh;
+}
+
+.first_part .first_part_content .content_bloc .first_part_content_three p {
+  font-size: 1.5rem;
+}

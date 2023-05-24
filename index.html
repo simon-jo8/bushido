@@ -1,106 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <title>Bushido</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  <title>Bushido</title>
+</head>
+<body>
 
-  <div id="loading">
-      <div id="lottieLoading" style="width: 300px"></div>
+<div id="loading">
+  <div id="lottieLoading" style="width: 300px"></div>
+</div>
+<div id="flash"></div>
+<section class="parallax">
+  <img src="assets/parallax/sun.svg" alt="" class="sun" id="sun">
+  <div class="title-parallax">
+    <!--        <img src="assets/parallax/bushido.svg"  id="title">-->
+    <h1 data-splitting id="titleCut">Bushido</h1>
+    <img src="assets/parallax/bushidoJapan.svg" id="titleJapan">
   </div>
-  <div id="flash"></div>
-    <section class="parallax">
-      <img src="assets/parallax/sun.svg" alt="" class="sun" id="sun">
-      <div class="title-parallax">
-<!--        <img src="assets/parallax/bushido.svg"  id="title">-->
-        <h1 data-splitting id="titleCut">Bushido</h1>
-        <img src="assets/parallax/bushidoJapan.svg" id="titleJapan">
-      </div>
-      <div class="layer1" id="first">
-        <img src="assets/parallax/pagode.svg" alt="" class="pagode">
-          <div class="porte" style="width: 200px"></div>
-<!--          <lottie-player-->
-<!--                  direction="1"-->
-<!--                  class="porte"-->
-<!--                  mode="normal"-->
-<!--                  src="https://lottie.host/9c8585cd-8c24-4747-a49f-1c3b6dd7181b/APMvAro7yB.json"-->
-<!--                  style="width: 200px"-->
-<!--          >-->
-<!--          </lottie-player>-->
+  <div class="layer1" id="first">
+    <img src="assets/parallax/pagode.svg" alt="" class="pagode">
+    <div class="porte" style="width: 200px"></div>
+    <!--          <lottie-player-->
+    <!--                  direction="1"-->
+    <!--                  class="porte"-->
+    <!--                  mode="normal"-->
+    <!--                  src="https://lottie.host/9c8585cd-8c24-4747-a49f-1c3b6dd7181b/APMvAro7yB.json"-->
+    <!--                  style="width: 200px"-->
+    <!--          >-->
+    <!--          </lottie-player>-->
 
-        <img src="assets/parallax/katana1.svg" alt="" class="katana1">
-        <img src="assets/parallax/katana2.svg" alt="" class="katana2">
-        <img src="assets/parallax/layer1.svg" alt="" class="ground1">
+    <img src="assets/parallax/katana1.svg" alt="" class="katana1">
+    <img src="assets/parallax/katana2.svg" alt="" class="katana2">
+    <img src="assets/parallax/layer1.svg" alt="" class="ground1">
+  </div>
+  <div class="layer2" id="second">
+    <img src="assets/parallax/grass1.svg" alt="" class="grass1">
+    <img src="assets/parallax/grass2.svg" alt="" class="grass2">
+    <img src="assets/parallax/layer2.svg" alt="" class="layer ground2">
+  </div>
+  <div class="layer3" id="third">
+    <img src="assets/parallax/layer3.svg" alt="" class="layer ground3">
+  </div>
+</section>
+<div class="first_part">
+  <div class="jap_main_title_container">
+    <div class="line">
+      <span>カ</span>
+    </div>
+    <div class="line">
+      <span>タ</span>
+    </div>
+    <div class="line">
+      <span>ナ</span>
+    </div>
+    <div class="line">
+      <span>の</span>
+    </div>
+    <div class="line">
+      <span>誕</span>
+    </div>
+    <div class="line">
+      <span>生</span>
+    </div>
+  </div>
+  <div class="first_part_content">
+    <div class="line_container">
+      <svg id="svg_first_part" viewBox="0 0 1455 1540" fill="none" preserveAspectRatio="xMidYMax meet">
+        <defs>
+          <pattern id="image1" x="0" y="0" patternunits="userSpaceOnUse" height="400" width="400">
+            <image x="0" y="0" xlink:href="assets/image/bamboo.png" width="400" height="400" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+          <pattern id="image2" x="0" y="0" patternunits="userSpaceOnUse" width="800" height="400">
+            <image x="0" y="0" xlink:href="assets/image/samourai1.jpg" width="950" height="600" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+          <pattern id="image3" x="0" y="0" patternunits="userSpaceOnUse"  width="800" height="1400">
+            <image x="0" y="0" xlink:href="assets/image/samourai2.png" width="700" height="1750" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+        </defs>
+        <g clip-path="url(#clip0_83_3)">
+          <path d="M677.999 5.92726e-05L727.499 6.36874e-05M778.999 6.81023e-05L727.499 6.36874e-05M727.499 6.36874e-05L727.499 452.5M727.499 452.5L1455 452.5M727.499 452.5L277.001 452.5M-6.72038e-06 452.5L277.001 452.5M1455 452.5L1455 1290M1455 452.5L1455 730M277.001 452.5L277.001 730M277.001 730L-6.38186e-05 730M277.001 730C578.719 730 615.226 730 790 730M790 954L-6.72037e-06 954M790 954L790 730M790 954L790 1290L1455 1290M1455 730C1427.26 730 1100.88 730 790 730M1455 730L1455 1290M1455 730L790 730" stroke="#DF1A10"/>
+          <circle class="shape" cx="138.5" cy="591.5" r="137.5" fill="url(#image1)" />
+          <path class="shape" d="M277.5 453H662.819C850.708 466.507 847.405 718.774 662.819 729.5H277.5C326.46 617.693 321.181 556.436 277.5 453Z" fill="url(#image2)"/>
+          <path class="shape" d="M1455 730L790 730L790 954L790 1290L1455 1290L1455 730Z" fill="url(#image3)" class=""/>
+        </g>
+        <defs>
+          <clipPath id="clip0_83_3">
+            <rect width="1455" height="1540" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <img src="assets/image/firstPart.svg" alt="">
+    </div>
+    <div class="content_bloc">
+      <section class="first_part_content_one">
+        <h2 class="text_parallax heading">THE BIRTH OF THE  KATANA</h2>
+        <span class="text_parallax">カタナの誕生カタナの</span>
+      </section>
+      <section class="first_part_content_two">
+        <p>
+          Katanas are a type of Japanese sword that appeared around 1400.
+          They were a new style of sword developed from the older “tachi”.
+        </p>
+      </section>
+      <section class="first_part_content_three">
+        <p>
+          The earliest origins of katana can be traced 1300 years back.
+          The first Japanese swords were variations of the Chinese jian (chokuto).
+          But during the early Heian period around 700A.D.,
+          the precursor to the katana began to take shape.
+        </p>
+      </section>
+    </div>
+  </div>
+</div>
+<section class="influence" id="influence-section">
+  <div class="jp_text">
+    <p class="vertical_text" lang=ja>カタナの影響</p>
+  </div>
+  <div class="influence_title">
+    <h2 class="title">The influence of the katana on Japanese culture</h2>
+  </div>
+  <div class="bloc_horizontal">
+    <div class="influence_text">
+      <p>Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
+        Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
+        Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
+      </p>
+    </div>
+    <img class="horizontal_img" src="assets/Influence/Four_samurai.png" alt="Four_samurai">
+    <img class="vertical_img" src="assets/Influence/Vertical_katana.png" alt="Vertical_katana">
+  </div>
+  <a href="#">
+    <div class="influence_btn">
+      Learn more about <br> Japanese Swords
+    </div>
+  </a>
+</section>
+<section class="katana_scroll">
+  <div class="katana_slice">
+    <img src="assets/Influence/katana_slice.png" alt="katana_slice" class="scroll-katana" >
+  </div>
+</section>
+</section>
+<section class="manga">
+  <header>
+    <h2 class="title">KATANA AND MANGA</h2>
+  </header>
+  <div class="manga__main">
+    <p class="vertical_text" lang=ja>刀とマンガ</p>
+    <div class="manga__grid">
+      <div class="case-1 case"></div>
+      <div class="case-2 case-text">
+        <p>Katanas have a strong influence in manga and anime. Many of them feature characters who use katanas , often with exaggerated and stylized designs.</p>
       </div>
-      <div class="layer2" id="second">
-        <img src="assets/parallax/grass1.svg" alt="" class="grass1">
-        <img src="assets/parallax/grass2.svg" alt="" class="grass2">
-        <img src="assets/parallax/layer2.svg" alt="" class="layer ground2">
+      <div class="case-3 case"></div>
+      <div class="case-4 case"></div>
+      <div class="case-5 case"></div>
+      <div class="case-6 case"></div>
+      <div class="case-7 case"></div>
+      <div class="case-8 case"></div>
+      <div class="case-9 case"></div>
+      <div class="case-10 case"></div>
+      <div class="case-11 case-text">
+        <p>Katanas represent the influence of manga and anime on Japanese culture. They are not only artistic objects, but also symbols of the cultural importance of manga and anime.</p>
       </div>
-      <div class="layer3" id="third">
-        <img src="assets/parallax/layer3.svg" alt="" class="layer ground3">
-      </div>
-    </section>
-    <section class="influence" id="influence-section">
-      <div class="jp_text">
-        <p class="vertical_text" lang=ja>カタナの影響</p>
-      </div>
-      <div class="influence_title">
-        <h2 class="title">The influence of the katana on Japanese culture</h2>
-      </div>
-      <div class="bloc_horizontal">
-        <div class="influence_text">
-          <p>Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
-            Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
-            Katanas are a type of Japanese sword that appeared around 1400. They were a new style of sword developed from the older “tachi”.
-          </p>
-        </div>
-      <img class="horizontal_img" src="assets/Influence/Four_samurai.png" alt="Four_samurai">
-      <img class="vertical_img" src="assets/Influence/Vertical_katana.png" alt="Vertical_katana">
-      </div>
-      <a href="#">
-        <div class="influence_btn">
-          Learn more about <br> Japanese Swords
-        </div>
-      </a>
-    </section>
-    <section class="katana_scroll">
-      <div class="katana_slice">
-        <img src="assets/Influence/katana_slice.png" alt="katana_slice" class="scroll-katana" >
-      </div>
-    </section>
-    </section>
-    <section class="manga">
-      <header>
-        <h2 class="title">KATANA AND MANGA</h2>
-      </header>
-      <div class="manga__main">
-        <p class="vertical_text" lang=ja>刀とマンガ</p>
-        <div class="manga__grid">
-          <div class="case-1 case"></div>
-          <div class="case-2 case-text">
-            <p>Katanas have a strong influence in manga and anime. Many of them feature characters who use katanas , often with exaggerated and stylized designs.</p>
-          </div>
-          <div class="case-3 case"></div>
-          <div class="case-4 case"></div>
-          <div class="case-5 case"></div>
-          <div class="case-6 case"></div>
-          <div class="case-7 case"></div>
-          <div class="case-8 case"></div>
-          <div class="case-9 case"></div>
-          <div class="case-10 case"></div>
-          <div class="case-11 case-text">
-            <p>Katanas represent the influence of manga and anime on Japanese culture. They are not only artistic objects, but also symbols of the cultural importance of manga and anime.</p>
-          </div>
-          <div class="case-12 case"></div>
-        </div>
-      </div>
-    </section>
-    <script type="module" src="main.js">
-    </script>
-  </body>
+      <div class="case-12 case"></div>
+    </div>
+  </div>
+</section>
+<script type="module" src="main.js">
+</script>
+</body>
 </html>

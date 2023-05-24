@@ -222,3 +222,98 @@ window.addEventListener('scroll', () => {
     const newPosition = initialPosition + scrollPosition;
     image.style.transform = `translateX(${newPosition}px)`;
 });
+
+//Jacky
+
+
+const tl = gsap.timeline();
+
+tl.from(".line span", 1.8, {
+    y: 100,
+    ease: "power4.out",
+    delay: 1,
+    skewY: 7,
+    stagger: {
+        amount: 0.3
+    }
+})
+
+// First part : Line effect
+
+let path = document.querySelector('path');
+let pathLength = path.getTotalLength();
+
+path.style.strokeDasharray = pathLength + ' ' + pathLength;
+path.style.strokeDashoffset = pathLength;
+
+window.addEventListener('scroll', () => {
+    // What % down is it ?
+    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+    // Length to offset the dashes
+    var drawLength = pathLength * scrollPercentage;
+
+    // Draw in reverse
+    path.style.strokeDashoffset = pathLength - drawLength;
+})
+
+// First part : Contents scrollTrigger
+
+gsap.fromTo('.first_part_content_one h2',{
+        x: 0, opacity: 0
+    }, {
+        scrollTrigger: {
+            trigger: '.first_part_content_one h2',
+            scrub: 1,
+            start: "top 50%",
+            duration: 20
+        },
+        x: 100, opacity: 100
+    },
+)
+
+gsap.fromTo('.first_part_content_one span',{
+        x: 100, opacity: 0
+    }, {
+        scrollTrigger: {
+            trigger: '.first_part_content_one span',
+            scrub: 1,
+            start: "top 70%",
+            duration: 20
+        },
+        x: 0, opacity: 100
+    },
+)
+
+const texts = document.querySelectorAll('.content_bloc section p');
+
+for(let i = 0; i < texts.length; i++){
+    gsap.fromTo(texts[i],{
+            y: 50, opacity: 0
+        }, {
+            scrollTrigger: {
+                trigger: texts[i],
+                scrub: 1,
+                start: "top 70%",
+            },
+            y: 0, opacity: 100
+        },
+    )
+}
+
+const shapes = document.querySelectorAll('#svg_first_part .shape');
+
+for(let i = 0; i < shapes.length; i++){
+    gsap.fromTo(shapes[i],{
+            x: -100, opacity: 0
+        }, {
+            scrollTrigger: {
+                trigger: shapes[i],
+                scrub: 1,
+                start: "top 50%",
+                end: "bottom 50%"
+            },
+            x: 0, opacity: 100
+        }
+    )
+}
