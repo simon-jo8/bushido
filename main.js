@@ -216,12 +216,24 @@ observer.observe(influenceSection);
 
 // Katana scroll
 const image = document.querySelector('.scroll-katana');
-const initialPosition = -2000;
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const newPosition = initialPosition + scrollPosition;
-    image.style.transform = `translateX(${newPosition}px)`;
-});
+
+gsap.to('.scroll-katana', {
+    x: 2000,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".katana_scroll",
+        markers:true,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    }
+})
+// const initialPosition = -2000;
+// window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
+//     const newPosition = initialPosition + scrollPosition;
+//     image.style.transform = `translateX(${newPosition}px)`;
+// });
 
 //Jacky
 
