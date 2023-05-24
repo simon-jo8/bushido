@@ -1,4 +1,5 @@
-import './style.css'
+import './sass/style.scss';
+import './manga.js';
 import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import lottie from 'lottie-web';
@@ -21,8 +22,6 @@ document.querySelector('#titleCut').addEventListener('click', function() {
         document.querySelector('#titleCut').classList.remove('cut');
     },3800)
 })
-
-
 
 
 var tlLoading = gsap.timeline({
@@ -163,3 +162,44 @@ document.querySelector('.katana2').addEventListener('click', function() {
         .to('.katana2', { rotation: 0, transformOrigin: "center center", duration: 0.5 }, "-=0.5"); // ends rotation
 });
 
+
+/* Jonathan */
+/* Bloc Influence */
+const influenceSection = document.querySelector('#influence-section');
+const horizontal_img = document.querySelector('.horizontal_img');
+const vertical_img = document.querySelector('.vertical_img');
+const jp_text = document.querySelector('.jp_text');
+
+const options = {
+  root: null,
+  threshold: 0.5,
+};
+
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      horizontal_img.classList.add('slidefromright');
+      vertical_img.classList.add('slidefrombottom');
+      jp_text.classList.add('slidefromright');
+
+      observer.unobserve(entry.target);
+    } else {
+      horizontal_img.classList.remove('slidefromright');
+      vertical_img.classList.remove('slidefrombottom');
+      jp_text.classList.remove('slidefromright');
+    }
+  });
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+observer.observe(influenceSection);
+
+// Katana scroll
+const image = document.querySelector('.scroll-katana');
+const initialPosition = -2000;
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const newPosition = initialPosition + scrollPosition;
+  image.style.transform = `translateX(${newPosition}px)`;
+});
