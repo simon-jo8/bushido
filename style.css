@@ -106,16 +106,17 @@ h1{
 }
 
 /* Jonathan */
-
+/* Bloc Influence */
 .influence{
   padding-top: 500px;
+  padding-bottom: 200px;
   margin-left: 150px;
-  /* padding-bottom: 500px; */
   position: relative;
   overflow: hidden;
 }
 
-h3{
+.influence h3{
+  margin-right: 400px;
   font-family: Inter;
   font-weight: lighter;
   text-transform: uppercase;
@@ -123,16 +124,12 @@ h3{
   color: #DF1A10;
 }
 
-.influence h3{
-  margin-right: 400px;
-}
-
-.bloc1 {
+.bloc_horizontal {
   display: flex;
   flex-direction:row;
 }
 
-p{
+.influence_text p{
   font-family: 'Times New Roman', Times, serif;
   font-weight:500;
   font-size: 22px;
@@ -143,20 +140,20 @@ p{
   padding-right: 200px;
 }
 
-.img1{
-  max-width: 100%;
-  height: auto;
+.horizontal_img{
+  max-width: 852px;
+  height: 364px;
   opacity: 0;
 }
 
-.img2{
+.vertical_img{
   position: absolute;
   left: 60%;
   padding-top: 200px;
   opacity: 0;
 }
 
-.jp{
+.jp_text{
   position: absolute;
   left: 80%;
   padding-top: 100px;
@@ -165,7 +162,7 @@ p{
   opacity: 0;
 }
 
-.vertical {
+.vertical_text {
   writing-mode: vertical-rl;
   color: #DF1A10;
   font-size: 125px;
@@ -195,19 +192,19 @@ p{
   }
 }
 
-.img1.slidefromright {
-  animation: slidefromright 2s ease-in-out forwards;
+.horizontal_img.slidefromright {
+  animation: slidefromright 2.5s ease-in-out forwards;
 }
 
-.img2.slidefrombottom {
-  animation: slidefrombottom 2s ease-in-out forwards;
+.vertical_img.slidefrombottom {
+  animation: slidefrombottom 2.5s  ease-in-out forwards;
 }
 
-.jp.slidefromright {
-  animation: slidefromright 2s ease-in-out forwards;
+.jp_text.slidefromright {
+  animation: slidefromright 2.5s  ease-in-out forwards;
 }
 
-/* Jonathan BTN */
+/* BTN */
 .influence_btn {
   text-align: center;
   display: inline-block;
@@ -238,3 +235,10 @@ p{
 .influence_btn:hover:before {
   left:95%;
 }
+
+/* Katana */
+.katana_scroll{
+  margin: 200px 500px 0 0;
+}
+
+/* Fin Jonathan */

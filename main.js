@@ -61,11 +61,12 @@ gsap.to('#third',
     }
 )
 
-// Bloc Influence Jonathan
+/* Jonathan */
+/* Bloc Influence */
 const influenceSection = document.querySelector('#influence-section');
-const img1 = document.querySelector('.img1');
-const img2 = document.querySelector('.img2');
-const jp = document.querySelector('.jp');
+const horizontal_img = document.querySelector('.horizontal_img');
+const vertical_img = document.querySelector('.vertical_img');
+const jp_text = document.querySelector('.jp_text');
 
 const options = {
   root: null,
@@ -75,15 +76,15 @@ const options = {
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      img1.classList.add('slidefromright');
-      img2.classList.add('slidefrombottom');
-      jp.classList.add('slidefromright');
+      horizontal_img.classList.add('slidefromright');
+      vertical_img.classList.add('slidefrombottom');
+      jp_text.classList.add('slidefromright');
 
       observer.unobserve(entry.target);
     } else {
-      img1.classList.remove('slidefromright');
-      img2.classList.remove('slidefrombottom');
-      jp.classList.remove('slidefromright');
+      horizontal_img.classList.remove('slidefromright');
+      vertical_img.classList.remove('slidefrombottom');
+      jp_text.classList.remove('slidefromright');
     }
   });
 };
@@ -91,3 +92,14 @@ const callback = (entries, observer) => {
 const observer = new IntersectionObserver(callback, options);
 
 observer.observe(influenceSection);
+
+// Katana scroll
+const image = document.querySelector('.scroll-katana');
+const initialPosition = -2000;
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const newPosition = initialPosition + scrollPosition;
+  image.style.transform = `translateX(${newPosition}px)`;
+});
+
+// Fin Jonathan
