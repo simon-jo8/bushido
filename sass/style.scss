@@ -353,13 +353,13 @@ h1.cut::after{
 .jp_text{
   position: absolute;
   left: 80%;
+  top: 200px;
   z-index: 1;
   right: 0;
   opacity: 0;
 }
 
 .vertical_text {
-  margin-top: 200px;
   writing-mode: vertical-rl;
   color: #DF1A10;
   font-size: 125px;
