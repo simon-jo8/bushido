@@ -6,12 +6,9 @@ import lottie from 'lottie-web';
 import Splitting from 'splitting';
 
 gsap.registerPlugin(ScrollTrigger);
-<<<<<<< HEAD
-Splitting();
-=======
+
 // Splitting();
 
->>>>>>> d5a6fee3ff00249829081acc451fc023b0fddab8
 
 function launch(){
     var tlLoading = gsap.timeline({
@@ -252,79 +249,6 @@ tl.from(".line span", 1.8, {
 
 const lines = document.querySelectorAll('.line');
 
-<<<<<<< HEAD
-// let path = document.querySelector('path');
-// let pathLength = path.getTotalLength();
-
-// path.style.strokeDasharray = pathLength + ' ' + pathLength;
-// path.style.strokeDashoffset = pathLength;
-
-// const lineScroll = () => {
-//     // What % down is it ?
-//     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-//     // Length to offset the dashes
-//     var drawLength = pathLength * scrollPercentage;
-
-//     // Draw in reverse
-//     path.style.strokeDashoffset = pathLength - drawLength;
-//     // alert("good")
-// }
-
-// ScrollTrigger.create({
-//     trigger: '#first_part_content',
-//     onEnter: lineScroll(),
-//     onLeave: lineScroll(),
-//     onEnterBack: lineScroll(),
-//     onLeaveBack: lineScroll(),
-//     markers: true,
-//     scrub: 1,
-//     start: "top 50%",
-// });
-
-const main = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#svg_first_part",
-      scrub: true,
-      start: "top center",
-      end: "bottom center"
-    }
-})
-
-// First part : Contents scrollTrigger
-
-const h2 = document.querySelectorAll('h2');
-
-for(let i = 0; i < h2.length; i++){
-    gsap.fromTo(h2[i],{
-        x: 0, opacity: 0
-        }, {
-            scrollTrigger: {
-                trigger: h2[i],
-                scrub: 1,
-                start: "top 70%",
-            },
-            x: 100, opacity: 100
-        },
-    )
-}
-
-const verticalText = document.querySelectorAll('.vertical_text');
-
-for(let i = 0; i < verticalText.length; i++){
-    gsap.fromTo(verticalText[i],{
-        y: 200, opacity: 0
-        }, {
-            scrollTrigger: {
-                trigger: verticalText[i],
-                scrub: 1,
-                start: "top 70%",
-            },
-            y: 0, opacity: 100
-        },
-    )
-}
-=======
 for(let i = 0; i < lines.length; i++){
     gsap.fromTo(lines[i],{
             y: 50,opacity: 0
@@ -381,7 +305,7 @@ gsap.fromTo('.manga .kmanga',{
         x: 100,
     },
 )
->>>>>>> d5a6fee3ff00249829081acc451fc023b0fddab8
+
 
 gsap.fromTo('.first_part_content_one span',{
         x: 100
