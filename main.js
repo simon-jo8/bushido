@@ -6,9 +6,7 @@ import lottie from 'lottie-web';
 import Splitting from 'splitting';
 
 gsap.registerPlugin(ScrollTrigger);
-Splitting();
-
-
+// Splitting();
 
 
 function launch(){
@@ -89,7 +87,6 @@ function launch(){
         }
     });
 
-
     var animation = lottie.loadAnimation({
         container: document.querySelector('.porte'),
         renderer: 'svg',
@@ -106,15 +103,15 @@ function launch(){
         // Play the animation
     });
 
-    tlLoading.from(".ground1", {y: 900, duration: 1,ease: Power1.easeOut});
-    tlLoading.from(".ground2", {y: 900, duration: 1.2,ease: Power1.easeOut},"<");
-    tlLoading.from(".grass1", {y: 900, duration: 1.2,ease: Power1.easeOut},"<");
-    tlLoading.from(".grass2", {y: 900, duration: 1.2,ease: Power1.easeOut},"<");
-    tlLoading.from(".ground3", {y: 900, duration: 1.4,ease: Power1.easeOut},"<");
+    tlLoading.from(".ground1", {y: 900, duration: 0.6,ease: Power1.easeOut});
+    tlLoading.from(".ground2", {y: 900, duration: 0.8,ease: Power1.easeOut},"<");
+    tlLoading.from(".grass1", {y: 900, duration: 0.8,ease: Power1.easeOut},"<");
+    tlLoading.from(".grass2", {y: 900, duration: 0.8,ease: Power1.easeOut},"<");
+    tlLoading.from(".ground3", {y: 900, duration: 1,ease: Power1.easeOut},"<");
     tlLoading.from("#sun", {y:900, duration:2,delay:-1},);
     tlLoading.from(".porte", {opacity: 0, duration: 1,ease: Power1.easeOut},"<");
 
-    tlLoading.from(".porte svg", {y: 900, duration: 1,ease: Power1.easeOut});
+    tlLoading.from(".porte svg", {y: 900, duration: 1,ease: Power1.easeOut},"<");
     tlLoading.call(() => animation.play());
     tlLoading.from(".pagode", {x: 400, duration: 1,ease: Power1.easeOut},"<");
 
@@ -216,12 +213,23 @@ observer.observe(influenceSection);
 
 // Katana scroll
 const image = document.querySelector('.scroll-katana');
-const initialPosition = -2000;
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const newPosition = initialPosition + scrollPosition;
-    image.style.transform = `translateX(${newPosition}px)`;
-});
+
+gsap.to('.scroll-katana', {
+    x: 2000,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".katana_scroll",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    }
+})
+// const initialPosition = -2000;
+// window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
+//     const newPosition = initialPosition + scrollPosition;
+//     image.style.transform = `translateX(${newPosition}px)`;
+// });
 
 //Jacky
 
@@ -238,50 +246,75 @@ tl.from(".line span", 1.8, {
     }
 })
 
-// First part : Line effect
+const lines = document.querySelectorAll('.line');
 
-let path = document.querySelector('path');
-let pathLength = path.getTotalLength();
+for(let i = 0; i < lines.length; i++){
+    gsap.fromTo(lines[i],{
+            y: 50,opacity: 0
+        }, {
+            scrollTrigger: {
+                trigger: lines[i],
+                scrub: 1,
+                delay: i * 2,
+                start: "top bottom",
+                end: "bottom 50%"
+            },
+            y: 0, opacity: 1, duration: 1
+        },
+    )
+}
 
-path.style.strokeDasharray = pathLength + ' ' + pathLength;
-path.style.strokeDashoffset = pathLength;
-
-window.addEventListener('scroll', () => {
-    // What % down is it ?
-    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-    // Length to offset the dashes
-    var drawLength = pathLength * scrollPercentage;
-
-    // Draw in reverse
-    path.style.strokeDashoffset = pathLength - drawLength;
-})
 
 // First part : Contents scrollTrigger
 
 gsap.fromTo('.first_part_content_one h2',{
-        x: 0, opacity: 0
+        x: 0,
     }, {
         scrollTrigger: {
-            trigger: '.first_part_content_one h2',
+            trigger: '.first_part_content_one',
             scrub: 1,
-            start: "top 50%",
-            duration: 20
+            start: "top bottom",
+            end: "bottom top",
         },
-        x: 100, opacity: 100
+        x: 100,
+    },
+)
+gsap.fromTo('.influence_title .title',{
+        x: 0,
+    }, {
+        scrollTrigger: {
+            trigger: '.influence_title',
+            scrub: 1,
+            start: "top bottom",
+            end: "bottom top",
+        },
+        x: 100,
+    },
+)
+
+gsap.fromTo('.manga .kmanga',{
+        x: 0,
+    }, {
+        scrollTrigger: {
+            trigger: '.kmanga',
+            scrub: 1,
+            start: "top bottom",
+            end: "bottom top",
+        },
+        x: 100,
     },
 )
 
 gsap.fromTo('.first_part_content_one span',{
-        x: 100, opacity: 0
+        x: 100
     }, {
         scrollTrigger: {
             trigger: '.first_part_content_one span',
             scrub: 1,
-            start: "top 70%",
-            duration: 20
+            start: "top bottom",
+            end: "bottom top",
         },
-        x: 0, opacity: 100
+        x: 0
     },
 )
 
@@ -289,14 +322,15 @@ const texts = document.querySelectorAll('.content_bloc section p');
 
 for(let i = 0; i < texts.length; i++){
     gsap.fromTo(texts[i],{
-            y: 50, opacity: 0
+            y: 50
         }, {
             scrollTrigger: {
                 trigger: texts[i],
                 scrub: 1,
-                start: "top 70%",
+                start: "top bottom",
+                end: "bottom top"
             },
-            y: 0, opacity: 100
+            y: 0
         },
     )
 }
@@ -305,15 +339,15 @@ const shapes = document.querySelectorAll('#svg_first_part .shape');
 
 for(let i = 0; i < shapes.length; i++){
     gsap.fromTo(shapes[i],{
-            x: -100, opacity: 0
+            x: -100
         }, {
             scrollTrigger: {
                 trigger: shapes[i],
                 scrub: 1,
-                start: "top 50%",
-                end: "bottom 50%"
+                start: "top bottom",
+                end: "bottom top"
             },
-            x: 0, opacity: 100
+            x: 0
         }
     )
 }
