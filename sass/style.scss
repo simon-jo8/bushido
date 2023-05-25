@@ -3,56 +3,76 @@
 $red-color: #DF1A10;
 $background-color: #F8CE9C;
 
-$h2-size: 64px;
+$h1-size: 12rem;
+$h2-size: 6rem;
+$h3-size: 3rem;
 $text-size: 22px;
 
+// Merosa
 @font-face {
   font-family: Merosa;
   src: url("../assets/font/Merosa.otf") format("opentype");
 }
-
 @font-face {
-  font-family: Merosa;
-  font-weight: bold;
+  font-family: MerosaBold;
   src: url("../assets/font/Merosa_Bold.otf") format("opentype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+// ShadowsIntoLight
+@font-face {
+  font-family: ShadowsIntoLightRegular;
+  src: url('../assets/font/ShadowsIntoLight-Regular.woff') format('truetype'),
+}
+
+//Kaisei Tokumin
+@font-face {
+  font-family: KaiseiTokuminRegular;
+  src: url('../assets/font/KaiseiTokumin-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: KaiseiTokuminExtraBold;
+  src: url('../assets/font/KaiseiTokumin-ExtraBold.woff') format('woff');
+}
 
 body {
   margin: 0;
   padding: 0;
   background: #F8CE9C;
+}
+
+h1, h2, .title {
+  font-family: Merosa;
+  pointer-events: auto;
+  color: $red-color;
+  z-index: 99999999;
 }
 
 h1{
-  font-family: Merosa;
-  font-size: 12rem;
   font-weight: bold;
-  color: $red-color;
-  margin: 0;
-  pointer-events: auto;
-  z-index: 99999999;
-
+  font-size: $h1-size;
 }
+
 h2 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
+  font-weight: lighter;
   font-size: $h2-size;
-  color: $red-color;
-  display: inline;
+  width: 70%;
+}
+
+h3 {
+  font-size: $h3-size;
 }
 
 p {
-  font-family: 'Inter', sans-serif;
-  font-size: 22px;
+  font-family: ShadowsIntoLightRegular;
+  font-size: 1.7rem;
+  // font-weight: bold;
   line-height: 1.5;
 }
-body {
-  margin: 0;
-  padding: 0;
-  background: #F8CE9C;
+
+*[lang="ja"]{
+  font-family: KaiseiTokuminRegular;
 }
+
 .hidden{
   display: none!important;
 }
@@ -160,9 +180,18 @@ h1.cut .char::after{
   width: 100vw;
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   /*pointer-events: none;*/
+}
+
+.title-parallax h1{
+  margin-top: -0.5em;
+}
+
+.title-parallax h3 {
+  margin-top: -4.5em;
 }
 
 .parallax{
@@ -292,13 +321,6 @@ h1.cut .char::after{
   flex-direction:row;
 }
 
-.influence_text p{
-  font-family: 'Times New Roman', Times, serif;
-  font-weight:500;
-  font-size: 22px;
-  line-height: 40px;
-}
-
 .influence_text{
   padding-right: 200px;
 }
@@ -328,7 +350,6 @@ h1.cut .char::after{
   writing-mode: vertical-rl;
   color: #DF1A10;
   font-size: 125px;
-  font-family: Inter;
   font-weight:bold;
 }
 
@@ -377,6 +398,8 @@ h1.cut .char::after{
   letter-spacing: 2px;
   position:relative;
   overflow:hidden;
+  font-family: ShadowsIntoLightRegular;
+  font-weight: bold;
   color: #DF1A10;
   text-transform: uppercase;
 }
@@ -411,17 +434,6 @@ h1.cut .char::after{
 
 //Jacky
 
-@font-face {
-  font-family: Merosa;
-  src: url("../assets/font/Merosa.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Merosa;
-  font-weight: bold;
-  src: url("../assets/font/Merosa_Bold.otf") format("opentype");
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -447,19 +459,9 @@ body {
 }
 /* ^ A Enlever ^ */
 
-h1{
-  font-family: Merosa;
-  font-size: 12rem;
-  font-weight: bold;
-  color: #DF1A10;
-  margin: 0;
-}
-
 .jap_vertical_title {
   writing-mode: vertical-rl;
 }
-
-
 
 /* First Part */
 
@@ -474,6 +476,7 @@ h1{
   justify-content: end;
   align-items: center;
   height: 40%;
+  margin-bottom: 10px;
 }
 
 .first_part .jap_main_title_container .line {
@@ -488,11 +491,11 @@ h1{
 
 .first_part .jap_main_title_container .line span {
   position: absolute;
+  font-family: KaiseiTokuminRegular;
   line-height: 5rem;
   font-size: 4rem;
   font-weight: 900;
-  -webkit-text-stroke: 2px #DF1A10;
-  color: transparent;
+  color: $red-color
 }
 
 .first_part .first_part_content {
@@ -531,14 +534,6 @@ h1{
   height: 64vh;
 }
 
-.first_part .first_part_content .content_bloc .first_part_content_one h2 {
-  font-family: Merosa;
-  font-weight: lighter;
-  font-size: 6rem;
-  color: #DF1A10;
-  width: 70%;
-}
-
 .first_part .first_part_content .content_bloc .first_part_content_one span {
   align-self: flex-end;
   font-size: 1.875rem;
@@ -553,18 +548,10 @@ h1{
   height: 35vh;
 }
 
-.first_part .first_part_content .content_bloc .first_part_content_two p {
-  font-size: 1.5rem;
-}
-
 .first_part .first_part_content .content_bloc .first_part_content_three {
   position: relative;
   margin: 0 55% 0 10%;
   height: 28vh;
-}
-
-.first_part .first_part_content .content_bloc .first_part_content_three p {
-  font-size: 1.5rem;
 }
 
 .sunrise_container {
