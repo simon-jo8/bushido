@@ -40,9 +40,10 @@ h1{
 }
 h2 {
   font-family: Merosa;
-  font-weight: lighter;
-  font-size: 6rem;
-  color: #DF1A10;
+  font-weight: 200;
+  font-size: $h2-size;
+  color: $red-color;
+  display: inline;
 }
 
 p {
@@ -600,6 +601,49 @@ h1{
 }
 
 
+
+.footer {
+  height: 700px;
+  position: relative;
+  img {
+    width: 100vw;
+    position: absolute;
+  }
+  .footer-layer1 {
+    bottom: 0;
+  }
+  .footer-layer2{
+    top: 40px;
+    z-index: -1;
+  }
+  .footer-layer3{
+    top: 0px;
+    z-index: -2;
+  }
+  ul, li {
+    list-style: none;
+    vertical-align: baseline;
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  &__link {
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    margin: 40px 0;
+    a {
+      color: white;
+      font-size: 40px;
+      text-decoration: none;
+      font-family: "Inter", sans-serif;
+      font-weight: 200;
+    }
+  }
 .sunrise_container {
   background-color: white;
   position: relative;
