@@ -32,7 +32,7 @@ h1{
   color: $red-color;
   margin: 0;
   pointer-events: auto;
-  z-index: 99999999;
+  z-index: 999;
 
 }
 h2 {
@@ -65,18 +65,56 @@ body {
   align-items: center;
   justify-content: center;
   background:#F8CE9C;
-  z-index: 9999999999;
+  z-index: 9999;
   opacity: 1;
   pointer-events: none;
+}
+
+#background{
+  height: 100vh;
+  z-index: 99999;
+  opacity: 0.7;
+  pointer-events: none;
+  position: fixed;
+}
+
+#background::after{
+  animation: grain 8s steps(10) infinite;
+  background-image: url("../assets/back.png");
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.3;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+  z-index: 99999;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 25%) }
+  90% { transform:translate(-10%, 10%) }
 }
 
 
 #flash{
   position: fixed;
   height: 100vh;
+  top: 0;
+  left: 0;
   width: 100vw;
   background: white;
-  z-index: 9999999999;
+  z-index: 99999;
   opacity: 0;
   pointer-events: none;
 }
@@ -104,51 +142,51 @@ h1:hover{
   cursor: url('../assets/katanaCursor.svg'),auto;
 }
 
-h1.splitting .char {
+h1.cut {
   visibility: hidden;
   position: relative;
 }
-h1.splitting .char::before, h1.splitting .char::after {
-  visibility: visible;
-}
-h1.splitting .char::before {
-  position: absolute;
-  content: attr(data-char);
-  color: #DF1A10;
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-}
-h1.splitting .char::after {
-  position: absolute;
-  left: 0;
-  content: attr(data-char);
-  color: #DF1A10;
-  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
-  transform-origin: 100% 50%;
+
+h1::before, h1::after {
+  visibility: hidden;
 }
 
-h1.cut .char::after{
-  animation: fall 3s cubic-bezier(0.8, 0, 0.9, 0.4) infinite;
-  animation-delay: calc(0.1s * var(--char-index));
+h1.cut::before, h1.cut::after {
+  visibility: visible;
+}
+
+h1::before {
+  position: absolute;
+  content: attr(data-text);
+  color: #DF1A10;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 60%);
+}
+
+h1::after {
+  position: absolute;
+  left: 0;
+  content: attr(data-text);
+  color: #DF1A10;
+  clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
+  //transform-origin: 100% 50%;
+}
+
+h1.cut::after{
+  animation: fall 3s cubic-bezier(.75,0,.5,.99) infinite;
+  //animation-delay: calc(0.1s * var(--char-index));
+}
+
+h1.cut::after{
+  animation: fall 3s cubic-bezier(.75,0,.5,.99) infinite;
+  //animation-delay: calc(0.1s * var(--char-index));
 }
 
 @keyframes fall {
-  0%,
-  20% {
+  0%{
     transform: none;
   }
-  70% {
-    transform: translateY(100vh) rotate(-0.5turn);
-    transform-origin: 50% 50%;
-    opacity: 1;
-  }
-  71% {
-    opacity: 0;
-  }
-  72% {
-    transform: scaleY(0);
-  }
-  90% {
-    transform: scale(1);
+  50% {
+    transform: translateX(-30px);
   }
   100% {
     opacity: 1;
@@ -221,24 +259,19 @@ h1.cut .char::after{
 .layer1 .katana1{
   left: 280px;
   bottom: 350px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .layer1 .katana2{
   left: 290px;
   bottom: 350px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .layer1 .katana1:hover,.layer1 .katana2:hover{
   cursor: pointer;
 }
 
-.layer1 .katana2{
-  left: 290px;
-  bottom: 350px;
-  z-index: 9999;
-}
 
 .layer1 .ground1{
   width: 100%;
