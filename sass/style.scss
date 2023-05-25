@@ -605,7 +605,7 @@ h1{
 .footer {
   height: 700px;
   position: relative;
-  img {
+  .footer-layer1, .footer-layer2, .footer-layer3 {
     width: 100vw;
     position: absolute;
   }
@@ -628,7 +628,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: 100%;
   }
   &__link {
@@ -640,10 +640,17 @@ h1{
       color: white;
       font-size: 40px;
       text-decoration: none;
-      font-family: "Inter", sans-serif;
+      font-family: Merosa;
       font-weight: 200;
     }
   }
+  &__katanas {
+    position: absolute;
+    bottom: 0;
+    width: 65vw;
+  }
+}
+
 .sunrise_container {
   background-color: white;
   position: relative;
