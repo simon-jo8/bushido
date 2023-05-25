@@ -42,10 +42,10 @@ body {
   flex-direction: column;
 }
 
-
-h1{
+h1, h2, .title {
   font-family: Merosa;
   pointer-events: auto;
+  color: $red-color;
   z-index: 999;
 }
 
@@ -55,8 +55,7 @@ h1{
 }
 
 h2 {
-  font-family: Merosa;
-  font-weight: 200;
+  font-weight: lighter;
   font-size: $h2-size;
   width: 70%;
 }
