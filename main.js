@@ -6,8 +6,8 @@ import lottie from 'lottie-web';
 import Splitting from 'splitting';
 
 gsap.registerPlugin(ScrollTrigger);
-// Splitting();
 
+// Splitting();
 
 function launch(){
     var tlLoading = gsap.timeline({
@@ -233,7 +233,6 @@ gsap.to('.scroll-katana', {
 
 //Jacky
 
-
 const tl = gsap.timeline();
 
 tl.from(".line span", 1.8, {
@@ -263,7 +262,6 @@ for(let i = 0; i < lines.length; i++){
         },
     )
 }
-
 
 // First part : Contents scrollTrigger
 
@@ -304,6 +302,7 @@ gsap.fromTo('.manga .kmanga',{
         x: 100,
     },
 )
+
 
 gsap.fromTo('.first_part_content_one span',{
         x: 100
@@ -362,5 +361,3 @@ const tween = gsap.to("#sunrise", {
     rotation: 90,
     ease: "none",
 });
-
-  
