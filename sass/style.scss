@@ -629,7 +629,7 @@ h1{
     flex-wrap: wrap;
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: 100vw;
   }
   &__link {
     width: 50%;
@@ -644,6 +644,7 @@ h1{
       font-weight: 200;
     }
   }
+}
 .sunrise_container {
   background-color: white;
   position: relative;
