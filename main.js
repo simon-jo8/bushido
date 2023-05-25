@@ -246,24 +246,24 @@ tl.from(".line span", 1.8, {
     }
 })
 
-// First part : Line effect
+const lines = document.querySelectorAll('.line');
 
-let path = document.querySelector('path');
-let pathLength = path.getTotalLength();
+for(let i = 0; i < lines.length; i++){
+    gsap.fromTo(lines[i],{
+            y: 50,opacity: 0
+        }, {
+            scrollTrigger: {
+                trigger: lines[i],
+                scrub: 1,
+                delay: i * 2,
+                start: "top bottom",
+                end: "bottom 50%"
+            },
+            y: 0, opacity: 1, duration: 1
+        },
+    )
+}
 
-path.style.strokeDasharray = pathLength + ' ' + pathLength;
-path.style.strokeDashoffset = pathLength;
-
-window.addEventListener('scroll', () => {
-    // What % down is it ?
-    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-    // Length to offset the dashes
-    var drawLength = pathLength * scrollPercentage;
-
-    // Draw in reverse
-    path.style.strokeDashoffset = pathLength - drawLength;
-})
 
 // First part : Contents scrollTrigger
 
@@ -272,6 +272,31 @@ gsap.fromTo('.first_part_content_one h2',{
     }, {
         scrollTrigger: {
             trigger: '.first_part_content_one',
+            scrub: 1,
+            start: "top bottom",
+            end: "bottom top",
+        },
+        x: 100,
+    },
+)
+gsap.fromTo('.influence_title .title',{
+        x: 0,
+    }, {
+        scrollTrigger: {
+            trigger: '.influence_title',
+            scrub: 1,
+            start: "top bottom",
+            end: "bottom top",
+        },
+        x: 100,
+    },
+)
+
+gsap.fromTo('.manga .kmanga',{
+        x: 0,
+    }, {
+        scrollTrigger: {
+            trigger: '.kmanga',
             scrub: 1,
             start: "top bottom",
             end: "bottom top",
